@@ -4,3 +4,5 @@ sqlalchemy
 pymysql
 bcrypt
 PyJWT
+email-validator
+python-dotenv

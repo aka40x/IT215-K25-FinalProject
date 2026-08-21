@@ -3,6 +3,8 @@ import os
 from dotenv import load_dotenv
 
 
+"""Đọc các cấu hình ứng dụng từ biến môi trường và file .env."""
+
 load_dotenv()
 
 

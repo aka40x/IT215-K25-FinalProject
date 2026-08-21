@@ -6,6 +6,7 @@ from models.research_task import TaskPriority, TaskStatus
 
 
 class ResearchTaskBase(BaseModel):
+    """Các trường dùng chung của nhiệm vụ nghiên cứu."""
     title: str = Field( min_length=1, max_length=255)
     description: str | None = None
     assignee_id: int | None = None
@@ -14,9 +15,11 @@ class ResearchTaskBase(BaseModel):
     due_date: datetime | None = None
 
 class ResearchTaskCreate(ResearchTaskBase):
+    """Dữ liệu tạo nhiệm vụ nghiên cứu."""
     pass
 
 class ResearchTaskUpdate(BaseModel):
+    """Dữ liệu cập nhật một phần nhiệm vụ."""
     title: str | None = Field(default=None, min_length=1, max_length=255)
     description: str | None = None
     assignee_id: int | None = None
@@ -25,6 +28,7 @@ class ResearchTaskUpdate(BaseModel):
     due_date: datetime | None = None
 
 class ResearchTaskResponse(BaseModel):
+    """Dữ liệu nhiệm vụ trả về cho client."""
     model_config = ConfigDict(from_attributes=True)
 
     id: int
