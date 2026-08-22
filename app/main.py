@@ -10,6 +10,7 @@ import models
 from routers.auth import router as auth_router
 from routers.health import router as health_router
 from routers.users import router as users_router
+from routers.research_project import router as research_router
 
 
 Base.metadata.create_all(bind=engine)
@@ -36,6 +37,7 @@ def handle_validation_exception(request: Request, exc: RequestValidationError):
 app.include_router(health_router)
 app.include_router(auth_router)
 app.include_router(users_router)
+app.include_router(research_router)
 
 
 @app.get("/")
